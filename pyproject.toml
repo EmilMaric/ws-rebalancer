@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "portfolio-rebalancer"
+version = "0.1.0"
+description = "A CLI tool that shows you what to buy to rebalance your portfolio as best as possible to your target allocations."
+authors = ["Emil Maric <emil.maric@hotmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+yfinance = "^0.1.59"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0a5"]
+build-backend = "poetry.core.masonry.api"
