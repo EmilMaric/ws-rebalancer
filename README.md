@@ -44,12 +44,12 @@ yourself).
 # Usage
 To generate the buys that will move your portfolio as close as possible to the target allocation, run the tool as follows:
 ```
-$ portfolio-rebalancer -p <portfolio CSV-file> <lump sum to invest>
+$ portfolio-rebalancer calc -p <portfolio CSV-file> <lump sum to invest>
 ```
 
 Using our `sample-portfolio.csv` as above, a sample run could look as follows:
 ```
-$ portfolio-rebalancer -p sample-portfolio.csv 100
+$ portfolio-rebalancer calc -p sample-portfolio.csv 100
 Buy 5X MSFT @ 10.00 - New allocation 40.00%
 Buy 1X APPL @ 20.00 - New allocation 30.00%
 Buy 1X GOOG @ 30.00 - New allocation 30.00%
