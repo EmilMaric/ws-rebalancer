@@ -1,4 +1,8 @@
-# Portfolio Rebalancer
+Portfolio Rebalancer
+=
+[![Build Status](https://travis-ci.com/EmilMaric/portfolio-rebalancer.svg?branch=main)](https://travis-ci.com/EmilMaric/portfolio-rebalancer)
+[![codecov](https://codecov.io/gh/EmilMaric/portfolio-rebalancer/branch/main/graph/badge.svg?token=XJ371LIRJB)](https://codecov.io/gh/EmilMaric/portfolio-rebalancer)
+
 A CLI tool that informs you what buys you need to make to best rebalance your portfolio. The tool requires the following information in the form of a
 CSV file:
 - What assets you currently own. In the latest version, we only support putting a stock ticker here.
