@@ -1,8 +1,25 @@
 [tool.poetry]
 name = "portfolio-rebalancer"
-version = "0.1.0"
+version = "1.0.0"
 description = "A CLI tool that shows you what to buy to rebalance your portfolio as best as possible to your target allocations."
+license = "MIT"
+readme = "README.md"
+maintainers = ["Emil Maric <emil.maric@hotmail.com>"]
 authors = ["Emil Maric <emil.maric@hotmail.com>"]
+homepage = "https://github.com/EmilMaric/portfolio-rebalancer"
+repository = "https://github.com/EmilMaric/portfolio-rebalancer"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business :: Financial :: Accounting",
+]
+keywords = [
+    'portfolio',
+    'rebalancer',
+    'stocks'
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"
