@@ -5,10 +5,19 @@ description = "A CLI tool that shows you what to buy to rebalance your portfolio
 authors = ["Emil Maric <emil.maric@hotmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.7"
 yfinance = "^0.1.59"
+click = "^7.1.2"
+
+[tool.poetry.scripts]
+portfolio-rebalancer = "portfolio_rebalancer.cli:portfolio_rebalancer"
 
 [tool.poetry.dev-dependencies]
+flake8 = "^3.9.0"
+pytest = "^6.2.3"
+tox = "^3.23.0"
+pytest-cov = "^2.11.1"
+pytest-mock = "^3.5.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0a5"]
