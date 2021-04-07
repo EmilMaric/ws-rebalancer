@@ -16,13 +16,13 @@ after_success:
   - bash <(curl -s https://codecov.io/bash)
 before_deploy:
   - poetry build
-#deploy:
-#  skip_cleanup: true
-#  provider: pypi
-#  username: __token__
-#  password:
-#    secure:
-#  skip_existing: true
-#  on:
-#    branch: master
-#    tags: true
+deploy:
+  skip_cleanup: true
+  provider: pypi
+  username: __token__
+  password:
+    secure: bkQ0mmqN67DB3S0PKoGo62nANKntb1HomdiQeLb2MRM2dsodBk525ocVhM2HMaBpOJzyURNuJHwuA3Wo8eWHEqHPpnCkHFMZquYVfjZDT0qfkcpq42sczBFyAIbFQLGK54Z7sz+slJvbRdtpKBkn+exCqVsXEsfjdpvaCNYNQrdQ9/Lo5dN5PJZFb4vdBwvNNRzPrT/PnbX5Rbtmu85rdVfbkIU+N41O/m5PaAk+t8onPQ9cyYZNScBLNkCuQESUpVbfZcmeUPFRCveQ0VBioM70zTM2Wxs5iTSGUuMZq5r7khJtbMd+uP7zbsdn67tI4/3TUrw51uvGjSikuMznuDSJjEWq2T1MFoDikvomBmSf0TFBKXg/zhbk+CEA4qg3BphROGDVJjHfj+CQDetvZcVT1Xkt8aeEaFIz9srIIRZrb4AMY81UT9rACv9Ss5RU6R6y9NJmZh8icX+wsxMtiYC8fYe6oCZdIoAjjnE3a2MMDIUZ0MjGVypo868+M09DZ2a7DH3i8EdhTBNJvAaDG/GvNEpc2xUSD9TuZvZ+t8vbSilBHnQRPLRe81i6oG4Jd89uDdgfW4hCe2vv1tNq5eNwJ9aR43OP+i7E9LFpu4PBdPL2bZpaTun/tsNjtleMJ+FY8fKQjYfqOiNG9xaYy8ReQFfHgU5rsF6OFExf0Ng=
+  skip_existing: true
+  on:
+    branch: master
+    tags: true
