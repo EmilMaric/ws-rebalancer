@@ -53,3 +53,4 @@ If you find issues using this tool, please create an Issue using the [Github iss
 and I will try to address it as soon as I can.
 
 # Contributing
+If you would like to contribute, please read the [CONTRIBUTING.md](https://github.com/EmilMaric/portfolio-rebalancer/blob/master/CONTRIBUTING.md) page
