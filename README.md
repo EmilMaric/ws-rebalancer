@@ -14,6 +14,11 @@ The tool will do the calculations necessary to tell you how much of each asset y
 possible to the target allocations you defined.
 
 # Installation
+```
+# To get the latest release
+pip install portfolio-rebalancer
+```
+
 # CSV-file requirements
 To start, create a CSV file that will contain all of your portfolio. In the CSV file, each line will represent a unique asset you own. In the latest
 version, asset is synonymous for stock, so just use the ticker. The format for each line is as follows:
@@ -44,7 +49,7 @@ $ portfolio-rebalancer -p <portfolio CSV-file> <lump sum to invest>
 
 Using our `sample-portfolio.csv` as above, a sample run could look as follows:
 ```
-$ portfolio-rebalancer -p sample-portfolio.csv 
+$ portfolio-rebalancer -p sample-portfolio.csv 100
 Buy 5X MSFT @ 10.00 - New allocation 40.00%
 Buy 1X APPL @ 20.00 - New allocation 30.00%
 Buy 1X GOOG @ 30.00 - New allocation 30.00%
