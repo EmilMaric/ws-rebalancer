@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "portfolio-rebalancer"
-version = "1.0.0"
+version = "1.0.1"
 description = "A CLI tool that shows you what to buy to rebalance your portfolio as best as possible to your target allocations."
 license = "MIT"
 readme = "README.md"
