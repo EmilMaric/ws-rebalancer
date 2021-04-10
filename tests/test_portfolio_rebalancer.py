@@ -27,7 +27,7 @@ def test_multiple_buys(testfiles_dir, ticker_mock):
                                          data=test_portfolio)
 
     runner = CliRunner()
-    result = runner.invoke(pr, ['calc', '-p', test_portfolio_csv, '100'],
+    result = runner.invoke(pr, ['calc', '-p', test_portfolio_csv, '100.00'],
                            catch_exceptions=False)
 
     assert result.exit_code == 0
@@ -59,7 +59,7 @@ def test_same_drift(testfiles_dir, ticker_mock):
                                          data=test_portfolio)
 
     runner = CliRunner()
-    result = runner.invoke(pr, ['calc', '-p', test_portfolio_csv, '30'],
+    result = runner.invoke(pr, ['calc', '-p', test_portfolio_csv, '30.00'],
                            catch_exceptions=False)
 
     assert result.exit_code == 0
@@ -85,7 +85,7 @@ def test_malformed_shares_value(testfiles_dir, ticker_mock):
                                          data=test_portfolio)
 
     runner = CliRunner()
-    result = runner.invoke(pr, ['calc', '-p', test_portfolio_csv, '30'])
+    result = runner.invoke(pr, ['calc', '-p', test_portfolio_csv, '30.00'])
 
     assert result.exit_code == 1
     assert result.output == """\
@@ -109,7 +109,7 @@ def test_malformed_target_allocation_value(testfiles_dir, ticker_mock):
                                          data=test_portfolio)
 
     runner = CliRunner()
-    result = runner.invoke(pr, ['calc', '-p', test_portfolio_csv, '30'])
+    result = runner.invoke(pr, ['calc', '-p', test_portfolio_csv, '30.00'])
 
     assert result.exit_code == 1
     assert result.output == """\
@@ -136,7 +136,7 @@ def test_same_asset_multiple_times(testfiles_dir, ticker_mock):
                                          data=test_portfolio)
 
     runner = CliRunner()
-    result = runner.invoke(pr, ['calc', '-p', test_portfolio_csv, '30'])
+    result = runner.invoke(pr, ['calc', '-p', test_portfolio_csv, '30.00'])
 
     assert result.exit_code == 1
     assert result.output == """\
@@ -162,11 +162,11 @@ def test_portfolio_target_allocation_over_100(testfiles_dir, ticker_mock):
                                          data=test_portfolio)
 
     runner = CliRunner()
-    result = runner.invoke(pr, ['calc', '-p', test_portfolio_csv, '30'])
+    result = runner.invoke(pr, ['calc', '-p', test_portfolio_csv, '30.00'])
 
     assert result.exit_code == 1
     assert result.output == """\
-Error: Total combined allocation percentage of all rows is over 100%.
+Error: Total combined allocation percentage of all rows is over 100%
 """
 
 
@@ -180,10 +180,35 @@ def test_no_assets(testfiles_dir, ticker_mock):
                                          "test_portfolio.csv",
                                          data=test_portfolio)
     runner = CliRunner()
-    result = runner.invoke(pr, ['calc', '-p', test_portfolio_csv, '30'],
+    result = runner.invoke(pr, ['calc', '-p', test_portfolio_csv, '30.00'],
                            catch_exceptions=False)
 
     assert result.exit_code == 1
     assert result.output == """\
 Error: Row 0 malformed - expecting row in this format: TICKER SHARES_OWNED TARET_ALLOCATION
+"""  # noqa: E501
+
+
+def test_keyerror(testfiles_dir, mocker):
+    """Test that if the portfolio CSV-file contains a ticker that can't be
+    found on Yahoo finance.
+    """
+    test_portfolio = [
+        ['MFST', '1', '100']
+    ]
+    test_portfolio_csv = create_csv_file(testfiles_dir,
+                                         "test_portfolio.csv",
+                                         data=test_portfolio)
+
+    mock_obj = mocker.patch(
+        'portfolio_rebalancer.portfolio_asset.yf.Ticker.info')
+    mock_obj.__getitem__.side_effect = KeyError
+
+    runner = CliRunner()
+    result = runner.invoke(pr, ['calc', '-p', test_portfolio_csv, '30.00'],
+                           catch_exceptions=False)
+
+    assert result.exit_code == 1
+    assert result.output == """\
+Error: Row 0 - ticker MFST doesn't exist
 """  # noqa: E501

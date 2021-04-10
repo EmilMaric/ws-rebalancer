@@ -13,7 +13,7 @@ def portfolio_rebalancer():
                                     "your portfolio as close as possible to "
                                     "your target allocation given a sum to "
                                     "invest."))
-@click.argument('sum-to-invest', type=click.INT)
+@click.argument('sum-to-invest', type=click.FLOAT)
 @click.option('-p', '--portfolio', 'portfolio_csv', required=True,
               help="CSV-file containing the portfolio and target allocations.")
 def calc(sum_to_invest, portfolio_csv):
