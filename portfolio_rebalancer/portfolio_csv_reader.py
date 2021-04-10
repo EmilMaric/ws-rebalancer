@@ -39,7 +39,6 @@ class PortfolioCsvReader:
     def get_portfolio(self):
         portfolio = Portfolio()
         total_allocation_pct = 0.0
-        seen_assets = set()
         with open(self.portfolio_csv, newline='') as f:
             reader = csv.reader(f)
             for line_num, row in enumerate(reader):
@@ -52,9 +51,13 @@ class PortfolioCsvReader:
                 shares = self._sanitize_shares(row[1], line_num)
                 target_allocation = self._sanitize_target_allocation(row[2],
                                                                      line_num)
-                asset = PortfolioAsset(name, shares, target_allocation)
-                if name not in seen_assets:
-                    seen_assets.add(name)
+                try:
+                    asset = PortfolioAsset(name, shares, target_allocation)
+                except KeyError:
+                    raise ClickException(
+                        "Row {} - ticker {} doesn't exist".format(line_num,
+                                                                  name))
+                if name not in portfolio.assets:
                     portfolio.add_asset(asset)
                 else:
                     raise ClickException("Asset name {} appears twice on row "
@@ -62,5 +65,5 @@ class PortfolioCsvReader:
                 total_allocation_pct += target_allocation
         if total_allocation_pct != 100:
             raise ClickException("Total combined allocation percentage of all "
-                                 "rows is over 100%.")
+                                 "rows is over 100%")
         return portfolio

@@ -8,6 +8,10 @@ class Portfolio:
     def __getitem__(self, asset_name):
         return self._assets[asset_name]
 
+    @property
+    def assets(self):
+        return self._assets
+
     def add_asset(self, asset):
         self._total += asset.price * asset.qty
         self._assets[asset.name] = asset
