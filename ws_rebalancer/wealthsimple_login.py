@@ -21,5 +21,5 @@ class WealthSimpleLogin(wealthsimple.WSTrade):
         MFACode = ""
         while not MFACode:
             # Obtain user input and ensure it is not empty
-            MFACode = click.prompt("Enter 2FA code: ")
+            MFACode = click.prompt("Enter 2FA code")
         return MFACode
