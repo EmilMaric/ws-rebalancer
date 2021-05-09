@@ -1,7 +1,7 @@
 Portfolio Rebalancer
 =
-[![Build Status](https://travis-ci.com/EmilMaric/portfolio-rebalancer.svg?branch=main)](https://travis-ci.com/EmilMaric/portfolio-rebalancer)
-[![codecov](https://codecov.io/gh/EmilMaric/portfolio-rebalancer/branch/main/graph/badge.svg?token=XJ371LIRJB)](https://codecov.io/gh/EmilMaric/portfolio-rebalancer)
+[![Build Status](https://travis-ci.com/EmilMaric/ws-rebalancer.svg?branch=main)](https://travis-ci.com/EmilMaric/ws-rebalancer)
+[![codecov](https://codecov.io/gh/EmilMaric/ws-rebalancer/branch/main/graph/badge.svg?token=XJ371LIRJB)](https://codecov.io/gh/EmilMaric/ws-rebalancer)
 
 A CLI tool that informs you what buys you need to make to best rebalance your portfolio. The tool requires the following information in the form of a
 CSV file:
@@ -10,7 +10,7 @@ CSV file:
 - What the target allocation is of the asset in question
 - A lump sum of cash that you're looking to invest in this portfolio
 
-The tool will do the calculations necessary to tell you how much of each asset you need to buy (if at all) to bring your portfolio as close as 
+The tool will do the calculations necessary to tell you how much of each asset you need to buy (if at all) to bring your portfolio as close as
 possible to the target allocations you defined.
 
 # Installation
