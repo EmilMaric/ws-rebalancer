@@ -49,7 +49,7 @@ Using our `sample-target-allocations.csv` as above, a sample run could look as f
 $ ws-rebalancer rebalance -t sample-target-allocations.csv --email test@gmail.com --2fa
 Password:
 Repeat for confirmation:
-Enter 2FA code: : 12345
+Enter 2FA code: 12345
 0. non-registered
 Please input the account you want: 0
 Buy 5X MSFT @ 10.00 - New allocation 40.00%
