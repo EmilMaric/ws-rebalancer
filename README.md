@@ -16,7 +16,7 @@ possible to the target allocations you defined.
 # Installation
 ```
 # To get the latest release
-pip install portfolio-rebalancer
+pip install ws-rebalancer
 ```
 
 # CSV-file requirements
