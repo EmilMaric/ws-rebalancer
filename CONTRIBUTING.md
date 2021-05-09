@@ -16,7 +16,7 @@ push. It will perform these checks for every python version that we support, and
 in. You can also running these checks manually before you push your code out as well:
 ```bash
 # Run the test suite manually using your system's default python version:
-poetry run pytest --cov-report term --cov=portfolio_rebalancer
+poetry run pytest --cov-report term --cov=ws_rebalancer
 
 # Run the linter against the project's default python version
 poetry run flake8
@@ -30,7 +30,7 @@ poetry run tox
 
 ## Running the tool manually
 ```
-poetry run portfolio-rebalancer ...
+poetry run ws-rebalancer ...
 ```
 
 ## Creating a release
