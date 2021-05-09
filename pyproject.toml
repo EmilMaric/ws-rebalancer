@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ws-rebalancer"
-version = "1.0.0"
+version = "1.0.1"
 description = "A CLI tool that helps you rebalance your WealthSimple portfolios."
 license = "MIT"
 readme = "README.md"
