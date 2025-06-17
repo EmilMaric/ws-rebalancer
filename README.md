@@ -1,6 +1,6 @@
 WealthSimple Portfolio Rebalancer
 =
-[![Build Status](https://travis-ci.com/EmilMaric/ws-rebalancer.svg?branch=main)](https://travis-ci.com/EmilMaric/ws-rebalancer)
+[![Build](https://github.com/EmilMaric/ws-rebalancer/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/EmilMaric/ws-rebalancer/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/EmilMaric/ws-rebalancer/branch/main/graph/badge.svg?token=XJ371LIRJB)](https://codecov.io/gh/EmilMaric/ws-rebalancer)
 
 A CLI tool that helps you rebalance your WealthSimple portfolio. The tool takes in a CSV-file that contains the target allocations for your
