@@ -23,20 +23,34 @@ keywords = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.10"
 click = "^7.1.2"
 wealthsimple-trade-python = "^1.1.0"
 
 [tool.poetry.scripts]
 ws-rebalancer = "ws_rebalancer.cli:ws_rebalancer"
 
-[tool.poetry.dev-dependencies]
-flake8 = "^3.9.0"
-pytest = "^6.2.3"
-tox = "^3.23.0"
-pytest-cov = "^2.11.1"
-pytest-mock = "^3.5.1"
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.0.0"
+pytest-cov = "^6.1.1"
+pytest-mock = "^3.14.1"
+flake8 = "^6.1.0"
+tox = "4.26.0"
+flake8-pyproject = "^1.2.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0a5"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.flake8]
+max-line-length = 79
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    ".venv",
+    "*.egg-info",
+    ".tox",
+    ".pytest_cache"
+]

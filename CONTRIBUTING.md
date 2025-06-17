@@ -39,7 +39,7 @@ we follow [semantic versioning](https://semver.org/) for our projects.
 
 1. Create a new branch
 2. Bump up the release numbers in `pyproject.toml`
-3. Push + create PR. Once PR is ready, merge it into the master branch.
+3. Push + create PR. Once PR is ready, merge it into the main branch.
 4. Create a new release using the Github release tools. This will create a new tag and
 kick off a CI build. The ensuing CI build will notice that this is a tagged commit and
 will package the project and push it to PyPI.
